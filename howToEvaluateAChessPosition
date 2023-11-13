@@ -1,0 +1,79 @@
+#Purpose: How to evaluate a chess position
+#Created by: Catadragon
+#Created on: 10/29/2023
+#Last modified on: 11/10/2023
+
+print("Chess Position Evaluation")
+print("This program shows brief steps on evaluating a chess position")
+print("")
+
+print("1. King Safety")#评估王的安全
+print("Is both kings safe?")
+kingSafety=input("A Yes B No  ")
+if kingSafety == "A":
+  print("Go to the next step")
+print("")
+if kingSafety == "B":
+  print("Whose king is safer?")
+  print("tips: Make sure you or your opponent can pose threat to the king.")
+  whoseKingSafer=input("A Ours B Opponent's ")
+  if whoseKingSafer == "A":
+    print("Try to protect your king, and also find dynamic chances")
+  if whoseKingSafer == "B":
+    print("Make sure your pieces are active enough to attack the king, or normally play and forget about this")
+    print("Try to deliver your pieces from the other side to opponent's king, especially when you have a space advantage")
+    print("Watch out opponent's counter-play from the other side or the center.")
+
+print("")
+print("2. Materials")#评估子力
+print("Count the materials")
+print("Forget about piece activity, is the value of materials equal or not?")
+pieceValue=input("A equal B inequal ")#单纯的数子力多少
+if pieceValue == "B":
+  print("Who has more materials?")
+  whoHasMoreMaterials=input("A our B our opponent ")
+  if whoHasMoreMaterials == "A":#我们有更多子
+    print("evaluate the pieces activity")
+    print("tips: You need to analyze the every piece's potential. How can it work in the future position") #写到了这里，记得下面还要再分，多子但是对面子力积极，多子但是我们子力积极等等
+    print("Do you think our opponents' piece activity can compensate for the materal loss? ") #evaluate piece activity
+    compensate1=input("A Yes, it does. B Not, it doesn't: ")
+    if compensate1=="A":
+        print("cautiously trade pieces and return materials if possible")
+    elif compensate1=="B":
+        print("Carefully win the game")
+  if whoHasMoreMaterials == "B":
+    print("play actively and avoid unnecessary trade")
+elif pieceValue == "A": 
+  print("evaluate the pieces activity")
+  print("tips: You need to analyze the every piece's potential. How can it work in the future position") 
+  print("Do you think our opponents' piece activity can compensate for the materal loss? ") #evaluate piece activity
+  compensate1=input("A Yes, it does. B Not, it doesn't")
+  if compensate1=="A":
+      print("cautiously trade pieces and return materials if possible")
+  elif compensate1=="B":
+      print("Carefully win the game")
+
+print("")
+print("3.Pawn Structure")
+print("Ignore other factors and consider only on the pawn struture. Whose pawn structure is better? (Isolani, IQP, IQP, hanging pawns etc.")
+pawnStructure=input("A Our pawn structure is better B. Our opponent's pawn structure is better ")
+if pawnStructure=="A":
+  print("Consider our opponent's dynamic chances along the half-open file created by the damage pawn structure")
+  print("Trade pieces and normally especially queens")
+elif pawnStructure=="B":
+  print("Avoid piece changes")
+  print("Actively play and pay attential to your opportunity along the open file")
+
+
+print("..........End..........")
+
+print("")
+print("Candidate Moves")
+print("Use the previous positional evaluation to conclude more than two candidate moves")
+
+print("")
+print("Start calculate all the candidate. Evaluate the position after several moves")
+print("Compare and come up with the best move")
+print("Double-check tactics. All our opponent's checks and threats")
+print("")
+print("MAKE THE MOVE")
