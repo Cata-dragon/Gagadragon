@@ -1,0 +1,25 @@
+#Purpose: Blindfold Chess Training
+#Created by: Alex Li
+#Created on: 11/15/2023
+#Last modified on: 11/15/2023
+
+print("I will tell you the position of White's pawn, White's king and Black's king. You need to identify whether the endgame is a win or a draw. This program trains your visualizing ability")
+
+print("")
+
+import random
+
+
+my_list = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "e1", "e2", "e3", "e4", "e5", "e6", "e7", "e8", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8", "h1", "h2", "h3", "h4", "h5", "h6", "h7", "h8"]
+
+pawnPosition=random.choice(my_list)
+while pawnPosition in ["a8", "b8", "c8", "d8", "e8", "f8", "g8", "h8","a1","b1","c1","d1","e1","f1","g1","h1"]:
+  pawnPosition=random.choice(my_list)
+whiteKingPosition=random.choice(my_list)
+blackKingPosition=random.choice(my_list)
+
+
+print("******It is white to move*******")
+print("White pawn is at %s"%pawnPosition)
+print("White's king is at %s"%whiteKingPosition)
+print("Black's king is at %s"%blackKingPosition)
